@@ -8,12 +8,12 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header('Content-Type: application/json');
 
-// ✅ Gestione richiesta OPTIONS
+// Gestione richiesta OPTIONS
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0);
 }
 
-// ✅ Controllo sessione
+// Controllo sessione
 if (!isset($_SESSION['id'])) {
     echo json_encode(["success" => false, "error" => "Utente non loggato"]);
     exit;
@@ -23,7 +23,7 @@ $mysqli = new mysqli("localhost", "root", "mattia12345", "findmypt_db");
 
 $userId = $_SESSION['id'];
 
-// ✅ Query con JOIN per prendere dati utente + user_dati + immagini
+// Query con JOIN per prendere dati utente + user_dati + immagini
 $query = "
     SELECT *
     FROM users u

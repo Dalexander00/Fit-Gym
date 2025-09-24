@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // 👈 aggiunto useNavigate
+import { Link, useNavigate } from "react-router-dom"; 
 import PTNavigation from "@/components/PTNavigation";
 import {
   Card,
@@ -18,7 +18,7 @@ import {
   Award,
   Users,
   Edit,
-  LogOut, // 👈 icona logout
+  LogOut,
 } from "lucide-react";
 
 interface PTData {
@@ -34,8 +34,7 @@ interface PTData {
 
 const PTProfile = () => {
   const [trainerData, setTrainerData] = useState<PTData | null>(null);
-  const navigate = useNavigate(); // 👈 serve per redirect dopo logout
-
+  const navigate = useNavigate(); 
   useEffect(() => {
     fetch("http://localhost/endopoints/getPTProfile.php", { 
       method: "GET",
@@ -61,7 +60,7 @@ const PTProfile = () => {
       });
       const data = await res.json();
       if (data.success) {
-        navigate("/login"); // 👈 redirect alla login
+        navigate("/login");
       } else {
         console.error("Errore logout:", data.error);
       }
@@ -91,7 +90,7 @@ const PTProfile = () => {
             </p>
           </div>
 
-          {/* 🔹 Bottone Logout */}
+          {/* Bottone Logout */}
           <Button
             variant="destructive"
             onClick={handleLogout}

@@ -25,7 +25,7 @@ if ($mysqli->connect_errno) {
     exit;
 }
 
-// ✅ Aggiorna dati PT
+// Aggiorna dati PT
 if (isset($_POST['Email'], $_POST['Nome'], $_POST['AnniDiEsperienza'], $_POST['Tariffa'], $_POST['Recapito'], $_POST['TitoloDiStudio'])) {
     $stmt1 = $mysqli->prepare("UPDATE users SET Email = ? WHERE id = ?");
     $stmt1->bind_param("si", $_POST['Email'], $userId);
@@ -50,7 +50,7 @@ if (isset($_POST['Email'], $_POST['Nome'], $_POST['AnniDiEsperienza'], $_POST['T
 
 $response = ["success" => true, "message" => "Profilo PT aggiornato"];
 
-// ✅ Upload immagine SOLO se presente
+// Upload immagine SOLO se presente
 if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
     $uploadDir = "C:/xampp/htdocs/findMyPT/Images/";
     $fileName = "pt_" . $userId . "_" . time() . ".jpg";

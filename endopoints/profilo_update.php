@@ -60,7 +60,7 @@ if (isset($_POST['Email'], $_POST['Nome'], $_POST['Peso'], $_POST['Altezza'], $_
 
 $response = ["success" => true, "message" => "Profilo aggiornato"];
 
-// ✅ Upload immagine SOLO se presente
+// Upload immagine SOLO se presente
 if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
     $uploadDir = "C:/xampp/htdocs/findMyPT/Images/";
     $fileName = "user_" . $userId . "_" . time() . ".jpg";

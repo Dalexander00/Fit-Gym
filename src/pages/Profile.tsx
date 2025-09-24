@@ -131,7 +131,7 @@ const [userData, setUserData] = useState(null);
                   </div>
                 )}
 
-                {/* 🔹 Bottone Logout */}
+                {/* Bottone Logout */}
                 <div className="text-center">
                   <Button
                     onClick={handleLogout}

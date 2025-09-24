@@ -13,11 +13,11 @@ import {
   DollarSign,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // 🔑 per redirect
+import { useNavigate } from "react-router-dom";
 
 const Trainers = () => {
   const [trainers, setTrainers] = useState([]);
-  const navigate = useNavigate(); // 🔑 hook per reindirizzamento
+  const navigate = useNavigate();
 
   useEffect(() => {
     // 🔹 Controlla se utente ha già un abbonamento

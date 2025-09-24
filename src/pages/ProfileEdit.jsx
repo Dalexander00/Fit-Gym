@@ -219,7 +219,7 @@ const Profile = () => {
                   </select>
                 </div>
 
-                {/* 🔹 Nuovi campi */}
+                {/* Nuovi campi */}
                 <div>
                   <label className="block text-sm font-medium">Obbiettivo</label>
                   <select
